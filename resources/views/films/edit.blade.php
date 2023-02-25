@@ -1,6 +1,6 @@
-<form action="{{route('film.update',$film->id)}}" method="POST" formenctype="multipart/form-data">
+<form action="{{route('film.update',$film->id)}}" method="POST" enctype="multipart/form-data">
     <input type="text" name="name" value="{{$film->name}}">
-    <input type="file">
+    <input type="file" name="poster_url">
     <select name="genre_ids" multiple>
         @foreach($genres as $genre)
             <option value="{{$genre->id}}">{{$genre->name}}</option>

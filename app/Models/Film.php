@@ -41,9 +41,9 @@ class Film extends Model
 
     public function poster(){
         if (empty($this->poster_url)) {
-            return 'storage/default.jpg';
+            return asset('storage/default.jpg');
         } else {
-            return 'storage/'.$this->poster_url;
+            return asset('storage/'.$this->poster_url);
         }
     }
 }

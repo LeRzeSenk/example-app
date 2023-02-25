@@ -3,8 +3,9 @@
     <ol>
         <li>ID:{{$film->id}}</li>
         <li>Название:{{$film->name}}</li>
-        <li>{{$film->filmStatus()}}</li>
-        <li>{{$film->timeCarbon('M d y')}}</li>
-        <li>{{$film->poster_url}}</li>
+        <li>Статус:{{$film->filmStatus()}}</li>
+        <li>Создано:{{$film->timeCarbon('M d y')}}</li>
+        <li>Постер URL:{{$film->poster_url}}</li>
     </ol>
 @endforeach
+{{ $films->links() }}

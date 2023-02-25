@@ -49,6 +49,7 @@ class GenreController extends BaseGenreController
 
     public function delete($id){
         $genre = $this->service->find($id);
+        $genre->films()->detach();
         $genre->delete();
 
         return redirect()->route('genre.index');

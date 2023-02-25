@@ -22,3 +22,4 @@
     </ol>
     <br><br>
 @endforeach
+{{ $films->links() }}

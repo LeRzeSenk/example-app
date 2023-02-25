@@ -21,11 +21,10 @@ class FilmService
     public function store($data){
         try{
             DB::beginTransaction();
-
-            if (isset($data['poster_url']) && !empty($data['poster_url'])){
+            if (!empty($data['poster_url'])){
                 $data['poster_url'] = Storage::disk('public')->put('images/posters',$data['poster_url']);
             }else {
-                $data['poster_url'] = 'images/poster/default.png';
+                $data['poster_url'] = '';
             }
             if (isset($data['genre_ids'])){
                 $tags_ids = $data['genre_ids'];
